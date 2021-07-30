@@ -12,6 +12,8 @@ body{
     min-height: 90vh;
     background-color: rgba(0, 0, 0, .5);
     margin: 5vh auto;
+    padding-bottom: 20px;
+    /* display: none; */
 }
 #header{
     width: 100%;
@@ -62,7 +64,66 @@ body{
     height: 50px;
     line-height: 50px;
     border: 1px solid #fff;
-    margin-top: 10px
+    margin-top: 10px;
+    color: #fff;
+  }
+  #dark{
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.5);
+      top: 0;
+      left: 0;
+      display: none;
+  }
+
+
+  #modal{
+
+    width: 75vw;
+    height: 80vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    display: none;
+    overflow: auto;
+  }
+  .row{
+      width: 85%;
+      margin: 5px auto;
+  }
+  .row label{
+      margin: 10px 0;
+      font-weight: bold;
+  }
+  .row:last-child {
+      margin-bottom: 20px;
+  }
+  #close{
+      width: 24px;
+      height: 24px;
+      display: block;
+      position: absolute;
+      top : 5px;
+      right: 5px;
+      background-image: url('close.png');
+      cursor: pointer;
+  }
+  .btn {
+      width: 70px;
+      height: 30px;
+      text-align: center;
+      display: block;
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      line-height: 15px;
+
+    }
+  .btn-danger{
+    right: 100px;
   }
   @media only screen and (max-width: 340px) {
     #add{
@@ -72,3 +133,5 @@ body{
         line-height: 30px;
     }
   }
+
+  
