@@ -2,4 +2,4 @@
 a simpel pass word manger with js
 
 ## -------------------------------
-!['home']('images/Readme.png')
+!['home']('images/Readme1.png')
