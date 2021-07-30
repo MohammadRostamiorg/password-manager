@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body{
-    background : url("background.jpg");
+    background : url("images/background.jpg");
 }
 #main{
     width: 90vw;
@@ -23,22 +23,22 @@ body{
 
 }
 #search-input{
-    float: right;
+    float: left;
     height: 50px;
     width: 70%;
     margin: 5px 10px;
-    direction: rtl;
+    /* direction: rtl; */
     background: unset;
     color: #fff;
     padding: 0 10px;
-    border: none;
+    border: unset !important;
 }
 #search-input::placeholder{
     opacity: 1;
     color: #fff;
 }
 #add{
-    float: left;
+    float: right;
     height: 50px;
     width: 50px;
     margin: 5px 10px;
@@ -108,7 +108,7 @@ body{
       position: absolute;
       top : 5px;
       right: 5px;
-      background-image: url('close.png');
+      background-image: url('images/close.png');
       cursor: pointer;
   }
   .btn {
