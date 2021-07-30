@@ -1,5 +1,5 @@
 # password-manager
-a simpel pass word manger with js
+a simpel password manger with js
 
 ## -------------------------------
 ![home](images/Readme1.png)
