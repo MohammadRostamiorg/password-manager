@@ -51,7 +51,7 @@ function show(el) {
     var pass = el.dataset.pass;
     var description = el.dataset.description;
     document.querySelectorAll('.row')[0].children[1].value = title;
-    document.querySelectorAll('.row')[1].children[1].value = pass;
+    document.querySelectorAll('.row')[1].children[2].value = pass;
     document.querySelectorAll('.row')[2].children[1].innerHTML = description;
     modal.setAttribute('data-opass','')
     main.style.display = "none";
@@ -96,5 +96,16 @@ function del_item(){
     li()
 
 }
+// show password by eye icon
+function show_pass(){
+    
+    let pass_input = document.querySelectorAll('.row')[1].children[2]
+    document.getElementById('eye').classList.toggle('active')
+    if(pass_input.type == "password"){
+        pass_input.type = ""
+    }else{
+        pass_input.type = "password"
+    }
 
+}
 li();
