@@ -1,5 +1,5 @@
 // set item passmg in localstorage
-if (localStorage.getItem('passmg' !== null)) {
+if (localStorage.passmg == undefined) {
     localStorage.setItem('passmg', JSON.stringify([]))
 }
 
