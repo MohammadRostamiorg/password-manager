@@ -7,4 +7,4 @@ a simpel password manger with js
 
 ## ----------------------------------------------------------------------------------------------
 
-![Modal](images/Readmi2.png)
+![Modal](images/Readme2.png)
