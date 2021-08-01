@@ -3,6 +3,11 @@ if (localStorage.passmg == undefined) {
     localStorage.setItem('passmg', JSON.stringify([]))
 }
 
+// get time for random number
+function time() {
+    var timestamp = Math.floor(new Date().getTime() / 1000)
+    return timestamp;
+}
 
 // set variables
 
@@ -25,6 +30,7 @@ function li() {
         el.setAttribute('data-title', item[0])
         el.setAttribute('data-pass', item[1])
         el.setAttribute('data-description', item[2])
+        el.setAttribute('data-id',item[3])
         el.setAttribute('onclick', 'show(this)')
         ul.append(el)
     });
@@ -36,7 +42,7 @@ function add() {
     var password = prompt('please enter your password');
     var description = prompt('please enter your password description');
     // insert data to localstorage
-    var items = [title, password, description];
+    var items = [title, password, description,time()];
     var passmg = JSON.parse(localStorage.getItem('passmg'));
     passmg.push(items);
     passmg = JSON.stringify(passmg);
@@ -50,9 +56,11 @@ function show(el) {
     var title = el.dataset.title;
     var pass = el.dataset.pass;
     var description = el.dataset.description;
+    var id = el.dataset.id;
     document.querySelectorAll('.row')[0].children[1].value = title;
     document.querySelectorAll('.row')[1].children[2].value = pass;
     document.querySelectorAll('.row')[2].children[1].innerHTML = description;
+    document.querySelector('#pass_id').value = id;
     modal.setAttribute('data-opass','')
     main.style.display = "none";
     dark.style.display = "block";
@@ -92,12 +100,12 @@ function show_pass(){
 
 function del_item(){
 
-    var deleted_item_title = document.querySelectorAll('.row')[0].children[1].value;
+    var deleted_item_id = document.querySelector('#pass_id').value;
     var items = localStorage.getItem('passmg');
     items = JSON.parse(items)
     var i = 0;
     while(i < items.length){
-        if (deleted_item_title == items[i][0]){
+        if (deleted_item_id == items[i][3]){
             items.splice(i,1);
         }
         
@@ -109,5 +117,29 @@ function del_item(){
     li()
 
 }
+// edit a password
+function edit() {
+    var items = localStorage.getItem('passmg');
+    var title = document.querySelectorAll('.row')[0].children[1].value;
+    var password = document.querySelectorAll('.row')[1].children[2].value;
+    var description = document.querySelectorAll('.row')[2].children[1].value;
+    var id = document.querySelector('#pass_id').value;
+    var new_item = [title,password,description,id]
+    var items = localStorage.getItem('passmg');
+    items = JSON.parse(items)
+    var i = 0;
+    while(i < items.length){
+        if (id == items[i][3]){
+            items.splice(i,1,new_item);
+        }
+        
+        i++;
+    }
+    items_new = JSON.stringify(items);
+    localStorage.setItem('passmg',items_new);
+    close_modal()
+    li()
 
+
+}
 li();

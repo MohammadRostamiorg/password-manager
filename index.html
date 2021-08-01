@@ -30,6 +30,7 @@
 
     </div>
     <div id="modal">
+        <input type="hidden" id="pass_id">
         <i id="close" onclick="close_modal()"></i>
         <div class="row">
             <label>
@@ -57,7 +58,7 @@
         </div>
         <div id="row">
             <span class="btn btn-danger" onclick="del_item()">Delete</span>
-            <span class="btn btn-success">Save</span>
+            <span class="btn btn-success" onclick="edit()">Save</span>
         </div>
     </div>
 
