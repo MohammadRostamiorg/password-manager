@@ -119,11 +119,15 @@ function del_item(){
 }
 // edit a password
 function edit() {
+    // get all items in localStorage
     var items = localStorage.getItem('passmg');
+    // get new data of edited item
     var title = document.querySelectorAll('.row')[0].children[1].value;
     var password = document.querySelectorAll('.row')[1].children[2].value;
     var description = document.querySelectorAll('.row')[2].children[1].value;
+    // get edited item id
     var id = document.querySelector('#pass_id').value;
+    // srt new data
     var new_item = [title,password,description,id]
     var items = localStorage.getItem('passmg');
     items = JSON.parse(items)
@@ -141,5 +145,9 @@ function edit() {
     li()
 
 
+}
+// search
+function search(val) {
+    
 }
 li();
