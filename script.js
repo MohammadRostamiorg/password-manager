@@ -56,10 +56,11 @@ function show(el) {
     var title = el.dataset.title;
     var pass = el.dataset.pass;
     var description = el.dataset.description;
+    console.log(description)
     var id = el.dataset.id;
     document.querySelectorAll('.row')[0].children[1].value = title;
     document.querySelectorAll('.row')[1].children[2].value = pass;
-    document.querySelectorAll('.row')[2].children[1].innerHTML = description;
+    document.querySelector('#description').value = description;
     document.querySelector('#pass_id').value = id;
     modal.setAttribute('data-opass', '')
     main.style.display = "none";
@@ -124,7 +125,7 @@ function edit() {
     // get new data of edited item
     var title = document.querySelectorAll('.row')[0].children[1].value;
     var password = document.querySelectorAll('.row')[1].children[2].value;
-    var description = document.querySelectorAll('.row')[2].children[1].value;
+    var description = document.querySelector('#description').innerHTML;
     // get edited item id
     var id = document.querySelector('#pass_id').value;
     // srt new data
