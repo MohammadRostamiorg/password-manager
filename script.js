@@ -125,7 +125,7 @@ function edit() {
     // get new data of edited item
     var title = document.querySelectorAll('.row')[0].children[1].value;
     var password = document.querySelectorAll('.row')[1].children[2].value;
-    var description = document.querySelector('#description').innerHTML;
+    var description = document.querySelector('#description').value;
     // get edited item id
     var id = document.querySelector('#pass_id').value;
     // srt new data
